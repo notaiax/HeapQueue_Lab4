@@ -35,19 +35,15 @@ public class HeapQueue<V, P extends Comparable<? super P>> implements PriorityQu
         }
     }
 
-
-
-    private static int parent(int index){
+    static int parent(int index){
         return (index - 1) / 2;
     }
-    private static int left(int index){
+    static int left(int index){
         return (index * 2) + 1;
     }
-    private static int right(int index){
+    static int right(int index){
         return (index * 2) + 2;
     }
-
-
 
     private boolean isValid(int index) { return 0 <= index && index < size(); }
     private boolean hasParent(int index) { return index > 0; }
@@ -56,7 +52,7 @@ public class HeapQueue<V, P extends Comparable<? super P>> implements PriorityQu
 
     @Override
     public void add(V value, P priority){
-        pairs.add(new TSPair(value, priority, this.nextTimeStamp));
+        pairs.add(new TSPair<>(value, priority, this.nextTimeStamp));
         this.nextTimeStamp++;
         checkPriority();
     }

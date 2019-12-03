@@ -1,8 +1,5 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.NoSuchElementException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -15,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Client2 -> 1L
  */
 class HeapQueueTest {
-    HeapQueue<String, Long> heapQueue;
+    private HeapQueue<String, Long> heapQueue;
 
     @Test
     void testElementEmptyHeap(){
@@ -129,7 +126,4 @@ class HeapQueueTest {
 
         assertEquals(heapQueue.element(), "Client1");
     }
-
-
-
 }
